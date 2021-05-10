@@ -41,7 +41,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       if (post.node.frontmatter.template === "blog-product") {
         productPostsCount++
       }
-
     });
   
     const productsPerPage = 9
