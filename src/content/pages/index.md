@@ -1,12 +1,11 @@
 ---
 template: index-page
 slug: /
-title: Wyatt Morriss
-tagline: Graphic Designer
+title: Angeline Lim
+tagline: Product Manager
 featuredImage: /assets/toa-heftiba-0rlfirsdvzu-unsplash.jpg
 cta:
-  ctaText: Know more
+  ctaText: Learn More
   ctaLink: /about
 ---
-
-He is a award winning gaming graphic designer, based in sunny side of California. Working as Principal designer at Bethesda
+A builder at heart, Product Manager by title with work experience spanning across Australia, China, and Southeast Asia. I enjoy delivering solutions that solve meaningful problems.
