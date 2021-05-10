@@ -64,7 +64,9 @@ class Navigation extends React.Component {
         </button>
         <ul>
           {listMenuItems}
-          <a href="https://pies.substack.com/">Blog</a>
+          <li>
+            <a href="https://pies.substack.com/">Blog</a>
+          </li>
           <div sx={navStyle.border}></div>
           <div sx={navStyle.theme}>
             <Theme />
