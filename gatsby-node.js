@@ -81,15 +81,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   const numProducts = Math.ceil(productPostsCount / postsPerPage)
-  Array.from({ length: numProducts }).forEach((_, i) => {
+  Array.from({ length: numProducts }).forEach((_, j) => {
     createPage({
-      path: i === 0 ? `/product` : `/product/${i + 1}`,
+      path: j === 0 ? `/product` : `/product/${j + 1}`,
       component: productList,
       context: {
         limit: postsPerPage,
-        skip: i * postsPerPage,
+        skip: j * postsPerPage,
         numProducts,
-        currentPage: i + 1,
+        currentPage: j + 1,
       },
     })
   })
