@@ -23,7 +23,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const posts = result.data.allMarkdownRemark.edges
     let productPostsCount = 0
   
-    posts.forEach(({ node }) => {
+    posts.forEach(({post, index}) => {
       const id = post.node.id
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
@@ -80,7 +80,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     const posts = result.data.allMarkdownRemark.edges
     let blogPostsCount = 0
 
-    posts.forEach(({ node }) => {
+    posts.forEach(({post, index}) => {
       const id = post.node.id
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
