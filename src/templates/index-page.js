@@ -47,7 +47,7 @@ export const pageQuery = graphql`
     }
     posts: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { template: { eq: "blog-post" } } }
+      filter: { frontmatter: { template: { eq: "blog-product" } } }
       limit: 6
     ) {
       edges {
@@ -55,7 +55,7 @@ export const pageQuery = graphql`
           id
           excerpt(pruneLength: 250)
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "MMMM, YYYY")
             slug
             title
             featuredImage {
