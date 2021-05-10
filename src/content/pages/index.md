@@ -3,7 +3,7 @@ template: index-page
 slug: /
 title: Angeline Lim
 tagline: Product Manager
-featuredImage: /assets/toa-heftiba-0rlfirsdvzu-unsplash.jpg
+featuredImage: /assets/pexels-burst-374016.jpg
 cta:
   ctaText: Learn More
   ctaLink: /about
