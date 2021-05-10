@@ -33,6 +33,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   // Create markdown pages
   const posts = result.data.allMarkdownRemark.edges
   let blogPostsCount = 0
+  let productPostsCount = 0
 
   posts.forEach((post, index) => {
     const id = post.node.id
@@ -52,9 +53,12 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
 
-    // Count blog posts.
+    // Count blog posts and product posts
     if (post.node.frontmatter.template === "blog-post") {
       blogPostsCount++
+    }
+    if (post.node.frontmatter.template === "blog-product"){
+      productPostsCount++
     }
   })
 
@@ -75,6 +79,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 
+  const numProducts = Math.ceil(productPostsCount / postsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/product` : `/product/${i + 1}`,
@@ -82,7 +87,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {
         limit: postsPerPage,
         skip: i * postsPerPage,
-        numPages,
+        numProducts,
         currentPage: i + 1,
       },
     })
