@@ -5,6 +5,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   const blogList = path.resolve(`./src/templates/blog-list.js`)
+  const productList = path.resolve(`./src/templates/blog-product.js`)
 
   const result = await graphql(`
     {
@@ -73,6 +74,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/product` : `/product/${i + 1}`,
+      component: productList,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
+      },
+    })
+  })
+
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
