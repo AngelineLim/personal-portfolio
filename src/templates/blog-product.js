@@ -121,13 +121,13 @@ const Post = ({ data, pageContext }) => {
 export default Post
 
 export const pageQuery = graphql`
-  query BlogPostQuery($id: String!) {
+  query ProductPostQuery($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
       excerpt(pruneLength: 148)
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        date(formatString: "MMMM, YYYY")
         slug
         title
         description
