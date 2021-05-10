@@ -15,11 +15,11 @@ media_folder: "static/assets"
 public_folder: "/assets"
 
 collections:
-  - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit
-    label: "Posts" # Used in the UI
-    label_singular: "Post" # Used in the UI, ie: "New Post"
+  - name: "books" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Books" # Used in the UI
+    label_singular: "Book" # Used in the UI, ie: "New Post"
     description: >
-      Create awesome content here.
+      Populate any books or reading suggestions here
     folder: "src/content/posts"
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     summary: "{{title}} — {{year}}/{{month}}/{{day}}"
@@ -203,7 +203,59 @@ collections:
                 label: url
                 required: true
                 hint: "Paste the 'URL' of your Social media"
-
+  - name: "products"
+    label: "Products"
+    label-singular: "Product"
+    description: >
+      Document new products or projects you are working on here
+    folder: "src/content/products"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{year}}/{{month}}/{{day}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {
+          label: "Template",
+          name: "template",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+      - {
+          label: "Slug",
+          name: "slug",
+          widget: "string",
+          hint: "Start slug with /. Use only alphanumeric characters, - and _. Avoid spaces in any cases.",
+        }
+      - {
+          label: "Launch Date",
+          name: "date",
+          widget: "datetime",
+          dateFormat: "YYYY-MM",
+          timeFormat: false,
+          format: "YYYY-MM",
+        }
+      - { label: "SEO Description", name: "description", widget: "text" }
+      - {
+          label: "Featured Image",
+          name: "featuredImage",
+          widget: "image",
+          required: false,
+          tagname: "",
+        }
+      - {
+          label: "URL", 
+          name: "url",
+          widget: "string",
+          required: false,
+          hint: "Domain name or URL of the product/project goes here",
+      }
+      - {
+          label: "Body",
+          name: "body",
+          widget: "markdown",
+          hint: "Main content goes here.",
+        }
+  
   - label: "Appearance"
     name: "appearance"
     identifier_field: "name"
@@ -226,3 +278,4 @@ collections:
             widget: "color"
             enableAlpha: true
             allowInput: true
+  
