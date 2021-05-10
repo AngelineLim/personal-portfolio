@@ -20,7 +20,7 @@ const MenuItems = [
   },
   {
     path: "/book",
-    title: "Books",
+    title: "My Bookshelf",
   },
 ]
 

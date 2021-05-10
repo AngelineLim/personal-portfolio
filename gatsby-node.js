@@ -32,6 +32,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Create markdown pages
   const posts = result.data.allMarkdownRemark.edges
+
   let blogPostsCount = 0
   let productPostsCount = 0
 
@@ -80,7 +81,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   })
 
   const numProducts = Math.ceil(productPostsCount / postsPerPage)
-  Array.from({ length: numPages }).forEach((_, i) => {
+  Array.from({ length: numProducts }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/product` : `/product/${i + 1}`,
       component: productList,
