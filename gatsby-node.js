@@ -5,7 +5,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
   const blogList = path.resolve(`./src/templates/blog-list.js`)
-  const productList = path.resolve(`./src/templates/blog-product.js`)
 
   const result = await graphql(`
     {
@@ -32,9 +31,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // Create markdown pages
   const posts = result.data.allMarkdownRemark.edges
-
   let blogPostsCount = 0
-  let productPostsCount = 0
 
   posts.forEach((post, index) => {
     const id = post.node.id
@@ -58,9 +55,6 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     if (post.node.frontmatter.template === "blog-post") {
       blogPostsCount++
     }
-    if (post.node.frontmatter.template === "blog-product"){
-      productPostsCount++
-    }
   })
 
   // Create blog-list pages
@@ -79,21 +73,80 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       },
     })
   })
+}
 
-  const numProducts = Math.ceil(productPostsCount / postsPerPage)
-  Array.from({ length: numProducts }).forEach((_, j) => {
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createPage } = actions
+
+  const productList = path.resolve(`./src/templates/product-list.js`)
+
+  const result = await graphql(`
+    {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        edges {
+          node {
+            id
+            frontmatter {
+              slug
+              template
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  // Handle errors
+  if (result.errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  // Create markdown pages
+  const posts = result.data.allMarkdownRemark.edges
+  let blogPostsCount = 0
+
+  posts.forEach((post, index) => {
+    const id = post.node.id
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    const next = index === 0 ? null : posts[index - 1].node
+
     createPage({
-      path: j === 0 ? `/product` : `/product/${j + 1}`,
+      path: post.node.frontmatter.slug,
+      component: path.resolve(
+        `src/templates/${String(post.node.frontmatter.template)}.js`
+      ),
+      // additional data can be passed via context
+      context: {
+        id,
+        previous,
+        next,
+      },
+    })
+
+    // Count blog posts and product posts
+    if (post.node.frontmatter.template === "blog-product") {
+      blogPostsCount++
+    }
+  })
+
+  // Create blog-list pages
+  const postsPerPage = 9
+  const numPages = Math.ceil(blogPostsCount / postsPerPage)
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/product` : `/product/${i + 1}`,
       component: productList,
       context: {
         limit: postsPerPage,
-        skip: j * postsPerPage,
-        numProducts,
-        currentPage: j + 1,
+        skip: i * postsPerPage,
+        numPages,
+        currentPage: i + 1,
       },
     })
   })
-
 }
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
