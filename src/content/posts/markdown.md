@@ -1,9 +1,10 @@
 ---
 template: blog-post
-slug: /markdown
+title: "Remote: Office Not Required"
+slug: /remote
 date: 2020-05-09T05:53:16.102Z
-title: "Markdown: Syntax"
-featuredImage: /assets/mike-dorner-sf_1ZDA1YFw-unsplash.jpg
+description: "Remote: Office Not Required"
+featuredImage: /assets/411iuebo-kl.jpeg
 ---
 
 ## Overview
