@@ -1,10 +1,11 @@
 ---
 template: blog-post
-title: Extreme gaming extravaganza
-slug: /gaming-extravaganza
-date: 2020-05-13 12:55
-description: How we scaled an Extreme gaming extravaganza
-featuredImage: /assets/fredrick-tendong-hvyepjyehdq-unsplash.jpg
+title: The Attributes
+slug: /the-attributes
+date: 2020-05-03 12:55
+description: How “The Attributes - 25 Hidden Drivers of Optimal Performance” has
+  benefited me as a product person
+featuredImage: https://m.media-amazon.com/images/I/41oweVtUK6L.jpg
 ---
 
 My Pretty White ShoesMy Pretty White ShoesMy Pretty White ShoesMy Pretty White ShoesMy Pretty White ShoesMy Pretty White ShoesMy Pretty White Shoes
