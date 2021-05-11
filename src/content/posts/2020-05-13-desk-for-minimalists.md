@@ -2,7 +2,7 @@
 template: blog-post
 title: Show Your Work!
 slug: /show-your-work
-date: 2020-05-13 12:46
+date: 2021-05-09 12:46
 description: How “Show Your Work, 10 Ways to Share Your Creativity and Get
   Discovered” has benefited me as a product person
 featuredImage: https://m.media-amazon.com/images/I/51N+Ba1mYOL.jpg
