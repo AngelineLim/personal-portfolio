@@ -1,10 +1,10 @@
 ---
 template: blog-post
-title: Neon in Games
-slug: /new-post
+title: Becoming
+slug: /becoming
 date: 2020-05-09T05:53:16.102Z
 description: Neon
-featuredImage: /assets/sebastiaan-stam-5hbrem-5mnq-unsplash.jpg
+featuredImage: /assets/41dsmrdb-nl._sy346_.jpg
 ---
 
 aksnd sk djk ks djskjdsj jd sjk dkj jk
