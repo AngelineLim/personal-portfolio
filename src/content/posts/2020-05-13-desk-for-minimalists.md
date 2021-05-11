@@ -5,7 +5,7 @@ slug: /show-your-work
 date: 2021-05-09 12:46
 description: How “Show Your Work, 10 Ways to Share Your Creativity and Get
   Discovered” has benefited me as a product person
-featuredImage: https://m.media-amazon.com/images/I/51N+Ba1mYOL.jpg
+featuredImage: /assets/showyourwork.jpeg
 ---
 Uh, is the puppy mechanical in any way? Maybe I love you so much I love you no matter who you are pretending to be. If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right. I found what I need. And it's not friends, it's things.
 
