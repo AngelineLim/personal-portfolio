@@ -23,17 +23,5 @@ const PostMaker = ({ data }) => (
     </h2>
     <p>Behind the scenes product work I'm building on the side</p>
     <div className="grids col-1 sm-2 lg-3">{data}</div>
-//     <Link
-//       className="button"
-//       to="/product"
-//       sx={{
-//         variant: "variants.button",
-//       }}
-//     >
-//       See more
-//       <span className="icon -right">
-//         <RiArrowRightSLine />
-//       </span>
-//     </Link>
   </section>
 )
