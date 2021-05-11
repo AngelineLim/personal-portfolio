@@ -1,10 +1,10 @@
 ---
 template: blog-post
-title: Book Shelf
-slug: /book-shelf
+title: It Doesn't Have to Be Crazy at Work
+slug: /crazy-at-work
 date: 2019-07-10T00:00:00.000Z
-description: sdasd
-featuredImage: /assets/avery-klein-c_drtsnboqa-unsplash.jpg
+description: It Doesn't Have to Be Crazy at Work
+featuredImage: /assets/51neps2j-ul.jpeg
 ---
 
 Uh, is the puppy mechanical in any way? Maybe I love you so much I love you no matter who you are pretending to be. If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right. I found what I need. And it's not friends, it's things.
