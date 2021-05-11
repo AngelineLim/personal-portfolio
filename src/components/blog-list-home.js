@@ -16,23 +16,24 @@ export default function BlogListHome(props) {
 const PostMaker = ({ data }) => (
   <section className="home-posts">
     <h2>
-      Latest in <strong>Products</strong>{" "}
+      Building Products on the <strong>Side</strong>{" "}
       <span className="icon -right">
         <RiArrowDownLine />
       </span>
     </h2>
+    <p>Behind the scenes product work I'm building on the side</p>
     <div className="grids col-1 sm-2 lg-3">{data}</div>
-    <Link
-      className="button"
-      to="/product"
-      sx={{
-        variant: "variants.button",
-      }}
-    >
-      See more
-      <span className="icon -right">
-        <RiArrowRightSLine />
-      </span>
-    </Link>
+//     <Link
+//       className="button"
+//       to="/product"
+//       sx={{
+//         variant: "variants.button",
+//       }}
+//     >
+//       See more
+//       <span className="icon -right">
+//         <RiArrowRightSLine />
+//       </span>
+//     </Link>
   </section>
 )
