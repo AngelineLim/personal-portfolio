@@ -14,10 +14,10 @@ const MenuItems = [
 //     path: "/about",
 //     title: "About",
 //   },
-  {
-    path: "/product",
-    title: "Products",
-  },
+//   {
+//     path: "/product",
+//     title: "Products",
+//   },
   {
     path: "/book",
     title: "My Bookshelf",
