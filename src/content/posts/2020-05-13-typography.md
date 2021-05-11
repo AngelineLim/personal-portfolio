@@ -4,7 +4,7 @@ title: Atomic Habits
 slug: /atomic-habits
 date: 2021-01-03 09:19
 description: How “Atomic Habits” has benefited me as an individual
-featuredImage: https://m.media-amazon.com/images/I/51PujYOdzLL.jpg
+featuredImage: /assets/atomichabits.jpeg
 ---
 \# When will that be?\
 \
